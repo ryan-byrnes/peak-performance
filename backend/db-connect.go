@@ -9,9 +9,7 @@ import (
 )
 
 const(
-	host = "localhost"
-	port = 5432
-	user = "postgres"
+	
 )
 
 func main() {
@@ -22,8 +20,11 @@ func main() {
 		os.Exit(1)
 	}
 
-	var password string = os.Getenv("DB_PASS")
-	var dbname string = os.Getenv("DB_NAME")
+	password := os.Getenv("DB_PASS")
+	dbname := os.Getenv("DB_NAME")
+	host := os.Getenv("HOST")
+	port := os.Getenv("PORT")
+	user := os.Getenv("USER")
 
 	psqlconn := fmt.Sprintf("host=%s port=%d user=%s password=%s dbname=%s sslmode=disable", host, port, user, password, dbname)
 
