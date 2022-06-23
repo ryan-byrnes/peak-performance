@@ -1,13 +1,12 @@
-package login
+package routes
 
 import (
 	"github.com/gorilla/mux"
-	"net/http"
 )
 
 func main() {
 
-	r =: mux.newRouter()
+	r := mux.NewRouter()
 	r.HandleFunc("/login", LoginHandler).Methods("GET")
 	r.HandleFunc("/sign-up", SignUpHandler).Methods("POST")
 	r.HandleFunc("/logout", LogoutHandler)
